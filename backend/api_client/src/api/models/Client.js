@@ -1,5 +1,11 @@
 import { Schema, model } from "mongoose";
 
+/*
+    TODO:
+    - set unique fields
+    - set regex expressions
+*/
+
 const ClientSchema = Schema({
     firstName: {
         type: String,

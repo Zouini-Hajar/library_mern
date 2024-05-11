@@ -24,7 +24,7 @@ export const getClient = (req, res) => {
 
 export const addClient = (req, res) => {
   Client.create(req.body)
-    .then((client) => res.status(200).json({ message: "Client updated successfully", client }))
+    .then((client) => res.status(200).json({ message: "Client added successfully", client }))
     .catch((err) => res.sendStatus(500));
 };
 
