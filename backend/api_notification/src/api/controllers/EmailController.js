@@ -1,8 +1,11 @@
-import nodemailer from 'nodemailer';
 import { transporter } from '../../config/RabbitMQConfig.js';
+import { emailSchema } from '../validations/OptionsValidation.js'
 
 export const sendEmail = async (req,res) => {
     try{
+
+        await emailSchema.validate(req.body, { abortEarly: false });
+
         const { from, to, subject, content } = req.body;
         console.log(from)
 
@@ -23,7 +26,15 @@ export const sendEmail = async (req,res) => {
             }
         })
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Internal Server Error');
+
+        if (error.name === 'ValidationError') {
+            const validationErrors = error.inner.map(err => err.message);
+            console.log(validationErrors);
+            res.status(400).send(validationErrors.join('\n'));
+            
+        } else {
+            // Handle other errors
+            res.status(500).send('Internal Server Error');
+        }
     }
 }
