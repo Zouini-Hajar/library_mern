@@ -1,8 +1,11 @@
-import nodemailer from 'nodemailer';
 import { transporter } from '../../config/RabbitMQConfig.js';
+import { emailSchema } from '../validations/OptionsValidation.js'
 
 export const sendEmail = async (req,res) => {
     try{
+
+        await emailSchema.validate(req.body);
+        
         const { from, to, subject, content } = req.body;
         console.log(from)
 
