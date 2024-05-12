@@ -2,3 +2,4 @@
 /backend/api_book/node_modules
 /backend/api_borrowing/node_modules
 /backend/api_notification/node_modules
+/backend/api_auth/node_modules
