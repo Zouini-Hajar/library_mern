@@ -7,7 +7,7 @@ configDotenv();
 
 const generateAccessToken = (userInfo) => {
   return jwt.sign(userInfo, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "60s",
+    expiresIn: "60s", // Just for testing
   });
 };
 
@@ -74,6 +74,37 @@ export const login = async (req, res) => {
   }
 };
 
+export const resetPassword = async (req, res) => {
+  try {
+    const { email, password, newPassword } = req.body;
+
+    // Check if the user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Verify password
+    const match = await bcrypt.compare(password, user.password);
+    if (match) {
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(newPassword, salt);
+      user.password = hashedPassword;
+      user.save();
+      
+      return res.status(200).json({
+        message: "Password changed successfully",
+        user
+      });
+    } else {
+      return res.status(401).json({ message: "Incorrect Password" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+};
+
 export const refreshToken = async (req, res) => {
   try {
     // In the client side the refresh token is gonna be stored in a cookie
@@ -103,7 +134,7 @@ export const validateJWT = async (req, res) => {
 
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403);
-      else return res.status(200).json({ email: user.email, role: user.role });
+      else return res.sendStatus(200);
     });
   } catch (error) {
     console.log(error);
