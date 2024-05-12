@@ -1,13 +1,15 @@
 import { Router } from "express";
-import { login, refreshToken, register, resetPassword, validateJWT } from "../controllers/AuthController.js";
+import { deleteUser, login, refreshToken, register, resetEmail, resetPassword, validateJWT } from "../controllers/AuthController.js";
 import validation from "../middlewares/validationMiddleware.js";
-import { loginUserSchema, registerUserSchema, resetPwdUserSchema } from "../validations/userValidation.js";
+import { loginUserSchema, registerUserSchema, resetEmailUserSchema, resetPwdUserSchema } from "../validations/userValidation.js";
 
 const routes = Router();
 
 routes.post("/register", validation(registerUserSchema), register);
 routes.post("/login", validation(loginUserSchema), login);
-routes.post("/resetPassword", validation(resetPwdUserSchema), resetPassword);
+routes.put("/resetPassword", validation(resetPwdUserSchema), resetPassword);
+routes.put("/resetEmail", validation(resetEmailUserSchema), resetEmail);
+routes.delete("/delete/:email", deleteUser);
 routes.post("/validate", validateJWT);
 routes.post("/refresh", refreshToken);
 

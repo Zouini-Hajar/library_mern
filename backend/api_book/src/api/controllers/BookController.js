@@ -29,9 +29,9 @@ export const getBook = async (req, res) => {
   }
 };
 
-export const addBook = (req, res) => {
+export const addBook = async (req, res) => {
   try {
-    const book = Book.create(req.body);
+    const book = await Book.create(req.body);
     res.status(200).json({ message: "Book added successfully", book });
   } catch(error) {
     console.log(error);
@@ -39,9 +39,9 @@ export const addBook = (req, res) => {
   }
 };
 
-export const updateBook = (req, res) => {
+export const updateBook = async (req, res) => {
   try {
-    const book = Book.findOneAndUpdate({ _id: req.body.id }, { $set: req.body });
+    const book = await Book.findOneAndUpdate({ _id: req.body.id }, { $set: req.body });
     if (!book) 
       res.status(404).json({ message: `No book found matching id ${req.params.id}` });
     else
@@ -52,12 +52,12 @@ export const updateBook = (req, res) => {
   }
 };
 
-export const deleteBook = (req, res) => {
+export const deleteBook = async (req, res) => {
   try {
     if (!req.params.id) 
       return res.status(400).json({ message: "Id is required" });
 
-    const book = Book.findOneAndDelete({ _id: req.params.id });
+    const book = await Book.findOneAndDelete({ _id: req.params.id });
     if (!book)
       res.status(404).json({ message: `No book found matching id ${req.params.id}` });
     else

@@ -16,3 +16,8 @@ export const resetPwdUserSchema = yup.object().shape({
   password: yup.string().required(),
   newPassword: yup.string().min(8).required(),
 });
+
+export const resetEmailUserSchema = yup.object().shape({
+  email: yup.string().email().required(),
+  newEmail: yup.string().email().required(),
+});

@@ -7,7 +7,7 @@ configDotenv();
 
 const generateAccessToken = (userInfo) => {
   return jwt.sign(userInfo, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "60s", // Just for testing
+    expiresIn: "1800s", // 30 mins
   });
 };
 
@@ -62,8 +62,8 @@ export const login = async (req, res) => {
       return res.status(200).json({
         message: "User logged in successfully",
         user: { ...userInfo },
-        accessToken, 
-        refreshToken
+        accessToken,
+        refreshToken,
       });
     } else {
       return res.status(401).json({ message: "Incorrect Password" });
@@ -93,12 +93,52 @@ export const resetPassword = async (req, res) => {
       user.save();
 
       return res.status(200).json({
-        message: "Password changed successfully",
-        user
+        message: "Password updated successfully",
+        user,
       });
     } else {
       return res.status(401).json({ message: "Incorrect Password" });
     }
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+};
+
+export const resetEmail = async (req, res) => {
+  try {
+    const { email, newEmail } = req.body;
+
+    // Check if the user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    user.email = newEmail;
+    user.save();
+
+    res.status(200).json({
+      message: "Email updated successfully",
+      user,
+    });
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+};
+
+export const deleteUser = async (req, res) => {
+  try {
+    if (!req.params.email)
+      return res.status(400).json({ message: "Email required" });
+
+    const user = await User.findOneAndDelete({ email: req.params.email });
+    if (!user)
+      res
+        .status(404)
+        .json({ message: `No user found with email ${req.params.email}` });
+    else res.status(200).json({ message: "User deleted successfully" });
   } catch (error) {
     console.log(error);
     res.sendStatus(500);
@@ -129,7 +169,7 @@ export const refreshToken = async (req, res) => {
 export const validateJWT = async (req, res) => {
   try {
     const token = req.body.token;
-    
+
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403);
       else return res.sendStatus(200);
