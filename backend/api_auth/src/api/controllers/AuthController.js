@@ -91,7 +91,7 @@ export const resetPassword = async (req, res) => {
       const hashedPassword = await bcrypt.hash(newPassword, salt);
       user.password = hashedPassword;
       user.save();
-      
+
       return res.status(200).json({
         message: "Password changed successfully",
         user
@@ -128,10 +128,8 @@ export const refreshToken = async (req, res) => {
 
 export const validateJWT = async (req, res) => {
   try {
-    const authHeader = req.headers["authorization"];
-    const token = authHeader ? authHeader.split(" ")[1] : null;
-    if (token == null) return res.sendStatus(401);
-
+    const token = req.body.token;
+    
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403);
       else return res.sendStatus(200);
