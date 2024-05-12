@@ -7,7 +7,7 @@ import validateAccessToken from "../middlewares/validateAccessToken.js";
 const routes = Router();
 
 routes.get('/', validateAccessToken, getAllClients);
-routes.get('/:id', validateAccessToken, getClient);
+routes.get('/:id', getClient);
 routes.post('/', validation(addClientSchema), addClient);
 routes.put('/', validateAccessToken, validation(updateClientSchema), updateClient);
 routes.delete('/:id', validateAccessToken, deleteClient);
