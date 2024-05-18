@@ -1,0 +1,31 @@
+.logo {
+    margin-top: -10px;
+    margin-left: -40px;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 3rem;
+}
+
+.menu {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #86469C;
+}
+
+.signIn-btn, .signUp-btn {
+    font-size: 0.9rem;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
