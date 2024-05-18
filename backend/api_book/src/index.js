@@ -1,4 +1,5 @@
 import express, { json } from 'express';
+import cors from 'cors';
 import { configDotenv } from 'dotenv';
 import connectToMongoDB from './config/DatabaseConfig.js';
 import BookRouter from './api/routes/book.js';
@@ -10,6 +11,7 @@ const PORT = process.env.PORT;
 
 const app = express();
 
+app.use(cors());
 app.use(json());
 app.use('/books', BookRouter);
 
