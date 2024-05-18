@@ -1,0 +1,79 @@
+
+.bestrented-container {
+    display: flex ;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+}
+
+.bestrented-container > div > img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.bestrented-container > .rating {
+    font-weight: 600;
+    font-size: 0.5rem;
+}
+
+.bestrented-container .genre {
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #86469C;
+    background-color: #EEDFF4;
+    border-radius: 15px;
+    text-align: center;
+    width: fit-content;
+    padding: 5px 10px;
+
+}
+
+.bestrented-container > .title {
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.bestrented-container > .author {
+    margin-top: -5px;
+    color: gray;
+    font-size: 0.7rem;
+}
+
+.bestrented-container .price {
+    margin-top: 1.2rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #86469C;
+    border-radius: 5px;
+}
+
+.bestrented-container .reviews {
+    font-size: 0.7rem;
+    background-color: #FFD782;
+    border-radius: 15px;
+    padding: 5px 10px;
+    color: #FE7900;
+}
+
+.bestrented-container .reviews > span:first-child {
+    margin-right: 4px;
+}
+
+.bestrented-container .book {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.badges {
+    display: flex;
+    gap: 5px;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #86469C !important;
+}

@@ -1,0 +1,77 @@
+
+.trendingbook-container {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.trendingbook-container > img {
+    width: 65%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.trendingbook-container > .rating {
+    font-weight: 600;
+    font-size: 0.5rem;
+}
+
+.trendingbook-container > .genre {
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #86469C;
+}
+
+.trendingbook-container > .title {
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.trendingbook-container > .author {
+    margin-top: -5px;
+    color: gray;
+    font-size: 0.7rem;
+}
+
+.trendingbook-container > .price {
+    font-weight: 600;
+    font-size: 0.7rem;
+    padding: 5px 5px;
+    color: #86469C;
+    border: 1px solid #86469C;
+    border-radius: 5px;
+}
+
+.trendingbook-container > .price:hover{
+    color: white;
+    background-color: #86469C;
+    cursor: pointer;
+}
+
+.trendingbook-container .reviews-container {
+    position: absolute;
+    z-index: 2;
+    margin-right: 4.5rem;
+    margin-top: 0.5rem;
+}
+
+.trendingbook-container .reviews {
+    width: fit-content;
+    font-size: 10px;
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 15px;
+    padding: 3px 6px 3px 0;
+    color: white;
+}
+
+.trendingbook-container .reviews > span:first-child {
+    background-color: #FEB941;
+    border-radius: 15px;
+    padding: 3px 6px;
+    margin-right: 4px;
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/promo.css'
 import '../styles/aboutus.css'
 
 export default function AboutUs() {

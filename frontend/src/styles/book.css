@@ -5,7 +5,7 @@
     gap: 0.5rem;
 }
 
-img {
+.book-container > img {
     width: 100%;
     height: 370px;
     object-fit: cover;

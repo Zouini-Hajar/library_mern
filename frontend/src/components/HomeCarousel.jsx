@@ -2,6 +2,8 @@ import React from 'react';
 import { Carousel } from 'antd';
 import pic1 from '../assets/Picture1.jpg';
 import pic2 from '../assets/Picture2.jpg';
+import pic3 from '../assets/Picture3.jpg';
+import pic4 from '../assets/Picture4.jpg';
 
 const contentStyle = {
   height: '500px', 
@@ -33,7 +35,7 @@ const imgContainerStyle = {
 };
 
 const HomeCarousel = () => (
-  <Carousel autoplay>
+  <Carousel autoplay style={{ margin: '0 -50px',}}>
     <div style={contentStyle}>
       <div style={imgContainerStyle}>
         <img src={pic1} alt="Shelves pic" style={imageStyle} />
@@ -48,13 +50,13 @@ const HomeCarousel = () => (
     </div>
     <div style={contentStyle}>
       <div style={imgContainerStyle}>
-        <img src={pic1} alt="Shelves pic" style={imageStyle} />
+        <img src={pic3} alt="Shelves pic" style={imageStyle} />
         <div style={overlayStyle}></div>
       </div>
     </div>
     <div style={contentStyle}>
       <div style={imgContainerStyle}>
-        <img src={pic1} alt="Shelves pic" style={imageStyle} />
+        <img src={pic4} alt="Shelves pic" style={imageStyle} />
         <div style={overlayStyle}></div>
       </div>
     </div>

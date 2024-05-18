@@ -1,0 +1,22 @@
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #FDF8FE;
+    margin: 6rem -50px;
+    padding: 50px 70px;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.service h4 {
+    margin-top: 1rem;
+}
+
+.service p {
+    font-size: 12px;
+}
