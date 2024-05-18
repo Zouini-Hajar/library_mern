@@ -1,0 +1,542 @@
+[
+  {
+    "title": "The Great Gatsby",
+    "authors": ["F. Scott Fitzgerald"],
+    "isbn": "9780743273565",
+    "description": "The story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan.",
+    "publisher": "Scribner",
+    "publicationDate": "2022-01-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 180,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81QuEGw8VPL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.5,
+    "reviews": [
+      {
+        "user": "user1",
+        "rating": 5,
+        "comment": "A timeless classic!"
+      },
+      {
+        "user": "user2",
+        "rating": 4,
+        "comment": "Enjoyed reading it."
+      }
+    ],
+    "price": 10.99,
+    "stock": 50
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "authors": ["Harper Lee"],
+    "isbn": "9780061120084",
+    "description": "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it.",
+    "publisher": "Harper",
+    "publicationDate": "2022-02-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 336,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.8,
+    "reviews": [
+      {
+        "user": "user3",
+        "rating": 5,
+        "comment": "A must-read!"
+      },
+      {
+        "user": "user4",
+        "rating": 4,
+        "comment": "Beautifully written."
+      }
+    ],
+    "price": 12.5,
+    "stock": 40
+  },
+  {
+    "title": "1984",
+    "authors": ["George Orwell"],
+    "isbn": "9780451524935",
+    "description": "A dystopian novel set in a totalitarian regime, where truth is manipulated and individuality is suppressed.",
+    "publisher": "Signet Classic",
+    "publicationDate": "2021-12-01",
+    "genres": ["Fiction", "Science Fiction"],
+    "language": "English",
+    "numberOfPages": 328,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/61NAx5pd6XL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.7,
+    "reviews": [
+      {
+        "user": "user5",
+        "rating": 5,
+        "comment": "A chilling portrayal of a possible future."
+      },
+      {
+        "user": "user6",
+        "rating": 4,
+        "comment": "Thought-provoking."
+      }
+    ],
+    "price": 11.99,
+    "stock": 60
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "authors": ["J.D. Salinger"],
+    "isbn": "9780316769488",
+    "description": "A story of teenage angst and alienation in an indifferent world.",
+    "publisher": "Back Bay Books",
+    "publicationDate": "2022-03-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 224,
+    "coverImageUrl": "https://booksondemand.ma/cdn/shop/products/71nXPGovoTL_1.jpg?v=1631701490",
+    "averageRating": 4.3,
+    "reviews": [
+      {
+        "user": "user7",
+        "rating": 4,
+        "comment": "Captures the essence of adolescence."
+      },
+      {
+        "user": "user8",
+        "rating": 3,
+        "comment": "An interesting read."
+      }
+    ],
+    "price": 9.99,
+    "stock": 35
+  },
+  {
+    "title": "Pride and Prejudice",
+    "authors": ["Jane Austen"],
+    "isbn": "9780141439518",
+    "description": "A classic tale of love and manners set in early 19th-century England.",
+    "publisher": "Penguin Classics",
+    "publicationDate": "2022-04-01",
+    "genres": ["Fiction", "Romance", "Classics"],
+    "language": "English",
+    "numberOfPages": 432,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.6,
+    "reviews": [
+      {
+        "user": "user9",
+        "rating": 5,
+        "comment": "Absolutely delightful!"
+      },
+      {
+        "user": "user10",
+        "rating": 4,
+        "comment": "A timeless romance."
+      }
+    ],
+    "price": 11.5,
+    "stock": 45
+  },
+  {
+    "title": "The Hobbit",
+    "authors": ["J.R.R. Tolkien"],
+    "isbn": "9780345339683",
+    "description": "A fantasy novel about a hobbit who embarks on an epic quest to reclaim treasure guarded by a dragon.",
+    "publisher": "Del Rey",
+    "publicationDate": "2022-05-01",
+    "genres": ["Fiction", "Fantasy"],
+    "language": "English",
+    "numberOfPages": 320,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/712cDO7d73L._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.8,
+    "reviews": [
+      {
+        "user": "user11",
+        "rating": 5,
+        "comment": "A captivating adventure!"
+      },
+      {
+        "user": "user12",
+        "rating": 4,
+        "comment": "Well-written and imaginative."
+      }
+    ],
+    "price": 13.99,
+    "stock": 55
+  },
+  {
+    "title": "The Alchemist",
+    "authors": ["Paulo Coelho"],
+    "isbn": "9780062315007",
+    "description": "A novel about a young Andalusian shepherd named Santiago who sets out on a journey to find a hidden treasure.",
+    "publisher": "HarperOne",
+    "publicationDate": "2022-06-01",
+    "genres": ["Fiction"],
+    "language": "English",
+    "numberOfPages": 208,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/61HAE8zahLL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.5,
+    "reviews": [
+      {
+        "user": "user13",
+        "rating": 5,
+        "comment": "A beautiful allegory."
+      },
+      {
+        "user": "user14",
+        "rating": 4,
+        "comment": "Inspirational."
+      }
+    ],
+    "price": 10.99,
+    "stock": 60
+  },
+  {
+    "title": "The Lord of the Rings",
+    "authors": ["J.R.R. Tolkien"],
+    "isbn": "9780544003415",
+    "description": "A high-fantasy epic trilogy set in the fictional world of Middle-earth, following the quest to destroy the One Ring.",
+    "publisher": "Mariner Books",
+    "publicationDate": "2022-07-01",
+    "genres": ["Fiction", "Fantasy"],
+    "language": "English",
+    "numberOfPages": 1178,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/7125+5E40JL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.9,
+    "reviews": [
+      {
+        "user": "user15",
+        "rating": 5,
+        "comment": "A masterpiece of fantasy literature."
+      },
+      {
+        "user": "user16",
+        "rating": 5,
+        "comment": "Epic in every sense of the word."
+      }
+    ],
+    "price": 24.99,
+    "stock": 30
+  },
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "authors": ["J.K. Rowling"],
+    "isbn": "9780747532743",
+    "description": "The first book in the Harry Potter series, following the young wizard Harry Potter's first year at Hogwarts School of Witchcraft and Wizardry.",
+    "publisher": "Bloomsbury Publishing",
+    "publicationDate": "2022-08-01",
+    "genres": ["Fiction", "Fantasy"],
+    "language": "English",
+    "numberOfPages": 332,
+    "coverImageUrl": "https://booksondemand.ma/cdn/shop/products/81YOuOGFCJL-min.jpg?v=1609447821",
+    "averageRating": 4.7,
+    "reviews": [
+      {
+        "user": "user17",
+        "rating": 5,
+        "comment": "Magical!"
+      },
+      {
+        "user": "user18",
+        "rating": 4,
+        "comment": "A delightful read."
+      }
+    ],
+    "price": 14.99,
+    "stock": 25
+  },
+  {
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "authors": ["Douglas Adams"],
+    "isbn": "9780345391803",
+    "description": "A comedic science fiction series following the adventures of Arthur Dent, a hapless human, after Earth's destruction to make way for a hyperspace bypass.",
+    "publisher": "Del Rey",
+    "publicationDate": "2022-09-01",
+    "genres": ["Fiction", "Science Fiction", "Humor"],
+    "language": "English",
+    "numberOfPages": 208,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/51vfuNNWMTS.jpg",
+    "averageRating": 4.6,
+    "reviews": [
+      {
+        "user": "user19",
+        "rating": 5,
+        "comment": "Laugh-out-loud funny!"
+      },
+      {
+        "user": "user20",
+        "rating": 4,
+        "comment": "Witty and clever."
+      }
+    ],
+    "price": 11.5,
+    "stock": 40
+  },
+  {
+    "title": "Moby-Dick",
+    "authors": ["Herman Melville"],
+    "isbn": "9780142437247",
+    "description": "A novel about the obsessive quest of Captain Ahab for revenge on the white whale Moby Dick.",
+    "publisher": "Penguin Classics",
+    "publicationDate": "2022-10-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 704,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/51aV053NRjL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.4,
+    "reviews": [
+      {
+        "user": "user21",
+        "rating": 4,
+        "comment": "A monumental work."
+      },
+      {
+        "user": "user22",
+        "rating": 5,
+        "comment": "Captivating!"
+      }
+    ],
+    "price": 15.99,
+    "stock": 20
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "authors": ["Oscar Wilde"],
+    "isbn": "9780141442464",
+    "description": "A philosophical novel about the young man Dorian Gray and his Faustian bargain.",
+    "publisher": "Penguin Classics",
+    "publicationDate": "2022-11-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 272,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81IWnvQmxLL._AC_UF894,1000_QL80_.jpg",
+    "averageRating": 4.7,
+    "reviews": [
+      {
+        "user": "user23",
+        "rating": 5,
+        "comment": "Intriguing and thought-provoking."
+      },
+      {
+        "user": "user24",
+        "rating": 4,
+        "comment": "Wilde's masterpiece."
+      }
+    ],
+    "price": 12.99,
+    "stock": 30
+  },
+  {
+    "title": "Crime and Punishment",
+    "authors": ["Fyodor Dostoevsky"],
+    "isbn": "9780143107637",
+    "description": "A psychological thriller about a young man's moral dilemmas after committing a murder.",
+    "publisher": "Penguin Classics",
+    "publicationDate": "2022-12-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 576,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/71O2XIytdqL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.6,
+    "reviews": [
+      {
+        "user": "user25",
+        "rating": 5,
+        "comment": "A gripping exploration of guilt and redemption."
+      },
+      {
+        "user": "user26",
+        "rating": 4,
+        "comment": "Intense and compelling."
+      }
+    ],
+    "price": 14.5,
+    "stock": 25
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "authors": ["Fyodor Dostoevsky"],
+    "isbn": "9780140449242",
+    "description": "A philosophical novel about faith, doubt, and the search for meaning, centered around the murder of their father, Fyodor Karamazov.",
+    "publisher": "Penguin Classics",
+    "publicationDate": "2023-01-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 796,
+    "coverImageUrl": "https://booksondemand.ma/cdn/shop/products/8117HB7WbvL-min.jpg?v=1631701489",
+    "averageRating": 4.8,
+    "reviews": [
+      {
+        "user": "user27",
+        "rating": 5,
+        "comment": "A profound masterpiece."
+      },
+      {
+        "user": "user28",
+        "rating": 4,
+        "comment": "Thought-provoking and complex."
+      }
+    ],
+    "price": 17.99,
+    "stock": 15
+  },
+  {
+    "title": "Anna Karenina",
+    "authors": ["Leo Tolstoy"],
+    "isbn": "9780143035008",
+    "description": "A tragic story of love and infidelity set against the backdrop of Russian society.",
+    "publisher": "Penguin Classics",
+    "publicationDate": "2023-02-01",
+    "genres": ["Fiction", "Classics"],
+    "language": "English",
+    "numberOfPages": 864,
+    "coverImageUrl": "https://almabooks.com/wp-content/uploads/2016/10/9781847493682.jpg",
+    "averageRating": 4.5,
+    "reviews": [
+      {
+        "user": "user29",
+        "rating": 5,
+        "comment": "Tolstoy at his best."
+      },
+      {
+        "user": "user30",
+        "rating": 4,
+        "comment": "A compelling narrative."
+      }
+    ],
+    "price": 16.5,
+    "stock": 20
+  },
+  {
+    "title": "The Odyssey",
+    "authors": ["Homer"],
+    "isbn": "9780140449112",
+    "description": "An epic poem attributed to the ancient Greek poet Homer, detailing the journey of Odysseus after the fall of Troy.",
+    "publisher": "Penguin Classics",
+    "publicationDate": "2023-03-01",
+    "genres": ["Poetry", "Classics"],
+    "language": "English",
+    "numberOfPages": 416,
+    "coverImageUrl": "https://booksofwonder.com/cdn/shop/products/9780763642686_494ea.jpg?v=1636565658",
+    "averageRating": 4.6,
+    "reviews": [
+      {
+        "user": "user31",
+        "rating": 5,
+        "comment": "A timeless epic."
+      },
+      {
+        "user": "user32",
+        "rating": 4,
+        "comment": "Classic literature at its finest."
+      }
+    ],
+    "price": 13.99,
+    "stock": 18
+  },
+  {
+    "title": "Brave New World",
+    "authors": ["Aldous Huxley"],
+    "isbn": "9780060850524",
+    "description": "A dystopian novel set in a futuristic world where technological and biological advancements have eradicated suffering and individuality.",
+    "publisher": "Harper Perennial Modern Classics",
+    "publicationDate": "2023-05-01",
+    "genres": ["Fiction", "Science Fiction", "Dystopian"],
+    "language": "English",
+    "numberOfPages": 288,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/91D4YvdC0dL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.5,
+    "reviews": [
+      {
+        "user": "user35",
+        "rating": 5,
+        "comment": "A chilling portrayal of a possible future."
+      },
+      {
+        "user": "user36",
+        "rating": 4,
+        "comment": "Thought-provoking and disturbing."
+      }
+    ],
+    "price": 14.99,
+    "stock": 22
+  },
+  {
+    "title": "The Bell Jar",
+    "authors": ["Sylvia Plath"],
+    "isbn": "9780060837020",
+    "description": "A semi-autobiographical novel about a young woman's descent into mental illness and her struggles with societal expectations.",
+    "publisher": "Harper Perennial Modern Classics",
+    "publicationDate": "2023-06-01",
+    "genres": ["Fiction", "Autobiographical", "Classics"],
+    "language": "English",
+    "numberOfPages": 288,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81wUVpREPSL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.4,
+    "reviews": [
+      {
+        "user": "user37",
+        "rating": 4,
+        "comment": "Raw and powerful."
+      },
+      {
+        "user": "user38",
+        "rating": 5,
+        "comment": "An important work."
+      }
+    ],
+    "price": 12.5,
+    "stock": 28
+  },
+  {
+    "title": "The Road",
+    "authors": ["Cormac McCarthy"],
+    "isbn": "9780307387899",
+    "description": "A post-apocalyptic novel following a father and son's journey across a desolate landscape in search of safety and hope.",
+    "publisher": "Vintage",
+    "publicationDate": "2023-07-01",
+    "genres": ["Fiction", "Post-Apocalyptic"],
+    "language": "English",
+    "numberOfPages": 256,
+    "coverImageUrl": "https://ik.imagekit.io/panmac/tr:di-placeholder_portrait_aMjPtD9YZ.jpg,tr:w-350,f-jpg,pr-true/edition/9781035003792.jpg",
+    "averageRating": 4.6,
+    "reviews": [
+      {
+        "user": "user39",
+        "rating": 5,
+        "comment": "Haunting and beautifully written."
+      },
+      {
+        "user": "user40",
+        "rating": 4,
+        "comment": "A gripping story of survival."
+      }
+    ],
+    "price": 13.99,
+    "stock": 20
+  },
+  {
+    "title": "Slaughterhouse-Five",
+    "authors": ["Kurt Vonnegut"],
+    "isbn": "9780385333849",
+    "description": "A satirical novel about the experiences of a soldier named Billy Pilgrim during World War II and his adventures in time travel.",
+    "publisher": "Delta",
+    "publicationDate": "2023-08-01",
+    "genres": ["Fiction", "Science Fiction", "Satire"],
+    "language": "English",
+    "numberOfPages": 275,
+    "coverImageUrl": "https://m.media-amazon.com/images/I/81PWUQgQ2uL._AC_UF1000,1000_QL80_.jpg",
+    "averageRating": 4.3,
+    "reviews": [
+      {
+        "user": "user41",
+        "rating": 4,
+        "comment": "Darkly humorous."
+      },
+      {
+        "user": "user42",
+        "rating": 5,
+        "comment": "A unique and powerful narrative."
+      }
+    ],
+    "price": 11.99,
+    "stock": 25
+  }
+]

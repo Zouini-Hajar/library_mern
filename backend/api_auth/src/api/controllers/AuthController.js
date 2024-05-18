@@ -15,6 +15,18 @@ const generateRefreshToken = (userInfo) => {
   return jwt.sign(userInfo, process.env.REFRESH_TOKEN_SECRET);
 };
 
+export const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    if (users.length == 0)
+      res.status(404).json({ message: "No users found" });
+    else res.status(200).json(users);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+}
+
 export const register = async (req, res) => {
   try {
     const { email, role, password } = req.body;

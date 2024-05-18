@@ -46,7 +46,7 @@ export const addBook = async (req, res) => {
       description: book.description,
       genres: book.genres,
       coverImageUrl: book.coverImageUrl
-    }]
+    }];
     channel.sendToQueue(MAILING_QUEUE, Buffer.from(JSON.stringify(data)));
 
     res.status(200).json({ message: "Book added successfully", book });
