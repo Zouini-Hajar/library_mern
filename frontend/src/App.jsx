@@ -14,7 +14,7 @@ function App() {
       theme={{
         token: {
           colorPrimary: "#86469C",
-        },
+        }
       }}
     >
       <Header />
