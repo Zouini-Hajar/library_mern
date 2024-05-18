@@ -5,10 +5,12 @@ import Books from "./pages/Books";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import Auth from "./pages/Auth";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { ConfigProvider } from "antd";
 
 function App() {
+  const location = useLocation();
+
   return (
     <ConfigProvider
       theme={{
@@ -17,7 +19,7 @@ function App() {
         }
       }}
     >
-      <Header />
+      { location.pathname != '/auth' && <Header /> }
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />

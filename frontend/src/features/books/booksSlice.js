@@ -36,5 +36,4 @@ const booksSlice = createSlice({
 
 export const {} = booksSlice.actions;
 export const selectAllBooks = state => state.books.data;
-export const selectBooksGenres = state => [...new Set(state.books.data.flatMap(book => book.genres))];
 export default booksSlice.reducer;
