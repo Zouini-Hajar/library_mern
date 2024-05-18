@@ -2,19 +2,16 @@ import React, { useEffect, useState } from "react";
 import "../styles/books.css";
 import { UnorderedListOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getBooks,
-  selectAllBooks,
-  selectBooksGenres,
-} from "../features/books/booksSlice";
+import { getBooks, selectAllBooks } from "../features/books/booksSlice";
 import { Button, Radio, Space, Slider } from "antd";
 import Book from "../components/Book";
 
 const Books = () => {
   const dispatch = useDispatch();
   const books = useSelector(selectAllBooks);
-  const genres = useSelector(selectBooksGenres);
+  const genres = [...new Set(books.flatMap((book) => book.genres))];
   const [genre, setGenre] = useState("");
+  //const [minMaxPrices, setMinMaxPrices] = useState([]);
 
   useEffect(() => {
     dispatch(getBooks());
@@ -32,6 +29,7 @@ const Books = () => {
             value={genre}
           >
             <Space direction="vertical">
+              <Radio value="all">All</Radio>
               {genres.map((genre) => (
                 <Radio value={genre}>{genre}</Radio>
               ))}
@@ -44,10 +42,10 @@ const Books = () => {
             }}
             tooltip={{
               formatter: (value) => `$${value}`,
-              placement: 'bottom'
             }}
-            style={{ width: '80%' }}
-            defaultValue={[20, 50]}
+            style={{ width: "80%" }}
+            defaultValue={[5, 30]}
+            onChangeComplete={(value) => console.log(value)}
           />
         </div>
       </div>
@@ -64,9 +62,11 @@ const Books = () => {
           </div>
         </div>
         <div className="flex">
-          {books.map((book) => (
-            <Book book={book} />
-          ))}
+          {!genre || genre == "all"
+            ? books.map((book, i) => <Book key={i} book={book} />)
+            : books
+                .filter((book) => book.genres.indexOf(genre) != -1)
+                .map((book, i) => <Book key={i} book={book} />)}
         </div>
       </div>
     </div>
