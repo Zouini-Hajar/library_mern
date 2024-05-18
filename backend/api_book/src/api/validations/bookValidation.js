@@ -1,9 +1,5 @@
 import * as yup from "yup";
 
-/*
-  TO DO :
-    - fix problem of user entering new files (it doesn't generate an error but it should return 400)
-*/
 
 export const addBookSchema = yup.object().shape({
   title: yup.string().required(),
