@@ -12,7 +12,7 @@ header {
     padding: 0 3rem;
 }
 
-.menu {
+.menu, .user {
     font-weight: 600;
     font-size: 0.9rem;
     color: #86469C;
@@ -28,4 +28,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+}
+
+.logout-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
 }

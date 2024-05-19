@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addClient, deleteClient, getAllClients, getClient, updateClient } from "../controllers/ClientController.js";
+import { addClient, deleteClient, getAllClients, getClientByEmail, getClientById, updateClient } from "../controllers/ClientController.js";
 import validation from "../middlewares/validationMiddleware.js";
 import { addClientSchema, updateClientSchema } from "../validations/clientValidation.js";
 import validateAccessToken from "../middlewares/validateAccessToken.js";
@@ -7,7 +7,8 @@ import validateAccessToken from "../middlewares/validateAccessToken.js";
 const routes = Router();
 
 routes.get('/', validateAccessToken, getAllClients);
-routes.get('/:id', getClient);
+routes.get('/getByEmail/:email', getClientByEmail);
+routes.get('/:id', validateAccessToken, getClientById);
 routes.post('/', validation(addClientSchema), addClient);
 routes.put('/', validateAccessToken, validation(updateClientSchema), updateClient);
 routes.delete('/:id', validateAccessToken, deleteClient);

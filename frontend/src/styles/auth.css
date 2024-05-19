@@ -30,25 +30,25 @@
 
 .auth-logo {
   position: relative;
-  top: -140px;
-  right: -250px;
+  top: -29%;
+  right: -31.5%;
 }
 
-.auth-form {
-	margin-top: -220px;
+.auth-div {
+	margin-top: -28%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
 
 form {
-	flex: 0.7;
+	flex: 0.8;
 	display: flex;
 	flex-direction: column;
-	gap: 1.2rem;
+	gap: 1rem;
 }
 
-form > div {
+form > div, .flex-row > div {
 	display: flex;
 	flex-direction: column;
 	gap: 0.3rem
@@ -60,4 +60,22 @@ button {
 
 img {
 	flex: 1;
+}
+
+.flex-row {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.error-msg {
+  color: rgb(184, 6, 6);
+  font-size: 0.8rem;
+  margin-bottom: -0.4rem;
+}
+
+.error-alert {
+  position: fixed;
+  z-index: 20;
+  top: 5%;
+  right: 3%;
 }

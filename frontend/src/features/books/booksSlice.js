@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
-const BOOK_API_URL = 'http://localhost:3001/books';
+import { BOOK_API_URL } from "../../configs/environment";
 
 export const getBooks = createAsyncThunk(
     'books/fetchBooks',
@@ -20,6 +19,7 @@ const booksSlice = createSlice({
     initialState: {
         data: [],
         loading: false,
+        error: null
     },
     reducers: {},
     extraReducers: (builder) => {

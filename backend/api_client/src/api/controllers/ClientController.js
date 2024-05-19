@@ -18,7 +18,7 @@ export const getAllClients = async (req, res) => {
   }
 };
 
-export const getClient = async (req, res) => {
+export const getClientById = async (req, res) => {
   try {
     if (!req.params.id)
       return res.status(400).json({ message: "Id is required" });
@@ -28,6 +28,23 @@ export const getClient = async (req, res) => {
       res
         .status(404)
         .json({ message: `No client found with id ${req.params.id}` });
+    else res.status(200).json(client);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+};
+
+export const getClientByEmail = async (req, res) => {
+  try {
+    if (!req.params.email)
+      return res.status(400).json({ message: "Email is required" });
+
+    const client = await Client.findOne({ email: req.params.email });
+    if (!client)
+      res
+        .status(404)
+        .json({ message: `No client found with email ${req.params.email}` });
     else res.status(200).json(client);
   } catch (error) {
     console.log(error);
