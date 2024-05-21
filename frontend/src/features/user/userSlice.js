@@ -59,6 +59,9 @@ export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
       token: accessToken,
     });
 
+    // Here if token is not valid refresh it
+    // But give the refresh token an expiration date too so the user doesn't stay always logged in
+
     const user = validationResponse.data;
 
     // In case client logged in, get extra info

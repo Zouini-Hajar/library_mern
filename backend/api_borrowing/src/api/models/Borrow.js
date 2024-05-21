@@ -10,11 +10,11 @@ const BorrowSchema = Schema({
     required: true,
   },
   borrowingDate: {
-    type:Date,
+    type: Date,
     default: Date.now
   },
   returnDate: {
-    type:Date,
+    type: Date,
     default: null
   }
 });
