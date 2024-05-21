@@ -1,21 +1,23 @@
+import { configDotenv } from "dotenv";
 import Borrow from "../models/Borrow.js";
 import axios from "axios";
+
+configDotenv();
+
+const BOOK_SERVICE_URL = process.env.BOOK_SERVICE_URL;
+const CLIENT_SERVICE_URL = process.env.CLIENT_SERVICE_URL;
 
 export const getClientBorrows = (req, res) => {
   try {
     const { clientId } = req.params;
 
-    console.log(clientId);
-
     const fetchClient = async (clientId) => {
-      const response = await axios.get(
-        `http://localhost:3000/clients/${clientId}`
-      );
+      const response = await axios.get(`${CLIENT_SERVICE_URL}/${clientId}`);
       return response.data;
     };
 
     const fetchBook = async (bookId) => {
-      const response = await axios.get(`http://localhost:3001/books/${bookId}`);
+      const response = await axios.get(`${BOOK_SERVICE_URL}/${bookId}`);
       return response.data;
     };
 
@@ -53,22 +55,21 @@ export const getClientBorrows = (req, res) => {
 
 export const addBorrow = (req, res) => {
   const { clientId, bookId } = req.body;
-  console.log(clientId)
-  console.log(bookId)
+  
   if (!clientId || !bookId) {
     return res
       .status(400)
       .json({ message: "Client ID and Book ID are required" });
   }
 
-  Borrow.create({ book:bookId , client:clientId})
+  Borrow.create({ book: bookId, client: clientId })
     .then((newBorrow) => {
       res
         .status(200)
         .json({ message: "Borrow added successfully", borrow: newBorrow });
     })
     .catch((error) => {
-      console.error("custom"+error);
+      console.error("custom" + error);
       res.status(500).send("Internal Server Error");
     });
 };
