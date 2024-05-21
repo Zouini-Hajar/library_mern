@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/auth.css";
 import { EyeTwoTone, EyeInvisibleOutlined } from "@ant-design/icons";
 import Logo from "../components/Logo";
-import { Alert, Button, Input, message } from "antd";
+import { Button, Input, message } from "antd";
 import AuthImage from "../components/AuthImage";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -87,10 +87,12 @@ const Auth = () => {
       messageApi.open({
         type: "error",
         content: error,
-        className: "error-alert"
+        className: "error-alert",
       });
     }
-    if (submitted && !error) navigate("/");
+    if (submitted && !error) {
+      navigate("/");
+    }
   }, [error, navigate]);
 
   return (

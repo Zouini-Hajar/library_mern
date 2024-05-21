@@ -9,18 +9,20 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchUser } from "./features/user/userSlice";
+import { fetchUser, resetError } from "./features/user/userSlice";
 
 function App() {
   const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(resetError());
+
     const accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
       dispatch(fetchUser());
     }
-  }, []);
+  }, [location]);
 
   return (
     <ConfigProvider

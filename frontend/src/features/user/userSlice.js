@@ -9,42 +9,48 @@ const setTokens = ({ accessToken, refreshToken }) => {
 };
 
 const clearTokens = () => {
-  localStorage.setItem("accessToken", '');
-  localStorage.setItem("refreshToken", '');
+  localStorage.setItem("accessToken", "");
+  localStorage.setItem("refreshToken", "");
 };
 
-export const createUser = createAsyncThunk("user/createUser", async (data, { rejectWithValue }) => {
-  try {
-    const registerResponse = await axios.post(CLIENT_API_URL, data);
-    const loginResponse = await axios.post(`${AUTH_API_URL}/login`, {
-      email: data.email,
-      password: data.password,
-    });
-    setTokens(loginResponse.data);
-    return registerResponse.data.client;
-  } catch (error) {
-    return rejectWithValue(error.response.data.message)
-  }
-});
-
-export const loginUser = createAsyncThunk("user/loginUser", async (data, { rejectWithValue }) => {
-  try {
-    const responseLogin = await axios.post(`${AUTH_API_URL}/login`, data);
-    setTokens(responseLogin.data);
-
-    // In case client logged in, get extra infos
-    if (responseLogin.data.user.role == "client") {
-      const response = await axios.get(
-        `${CLIENT_API_URL}/getByEmail/${data.email}`
-      );
-      return response.data;
+export const createUser = createAsyncThunk(
+  "user/createUser",
+  async (data, { rejectWithValue }) => {
+    try {
+      const registerResponse = await axios.post(CLIENT_API_URL, data);
+      const loginResponse = await axios.post(`${AUTH_API_URL}/login`, {
+        email: data.email,
+        password: data.password,
+      });
+      setTokens(loginResponse.data);
+      return registerResponse.data.client;
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
     }
-
-    return responseLogin.data.user;
-  } catch (error) {
-    return rejectWithValue(error.response.data.message)
   }
-});
+);
+
+export const loginUser = createAsyncThunk(
+  "user/loginUser",
+  async (data, { rejectWithValue }) => {
+    try {
+      const responseLogin = await axios.post(`${AUTH_API_URL}/login`, data);
+      setTokens(responseLogin.data);
+
+      // In case client logged in, get extra infos
+      if (responseLogin.data.user.role == "client") {
+        const response = await axios.get(
+          `${CLIENT_API_URL}/getByEmail/${data.email}`
+        );
+        return response.data;
+      }
+
+      return responseLogin.data.user;
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
+    }
+  }
+);
 
 export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
   try {
@@ -57,7 +63,9 @@ export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
 
     // In case client logged in, get extra info
     if (user.role == "client") {
-      const response = await axios.get(`${CLIENT_API_URL}/getByEmail/${user.email}`);
+      const response = await axios.get(
+        `${CLIENT_API_URL}/getByEmail/${user.email}`
+      );
       return response.data;
     }
 
@@ -89,9 +97,12 @@ const userSlice = createSlice({
   },
   reducers: {
     logOut: (state, action) => {
-        clearTokens();
-        state.user = null;
-    }
+      clearTokens();
+      state.user = null;
+    },
+    resetError: (state, action) => {
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -137,7 +148,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { logOut } = userSlice.actions;
+export const { logOut, resetError } = userSlice.actions;
 export const selectUser = (state) => state.user.user;
 export const selectError = (state) => state.user.error;
 export default userSlice.reducer;
