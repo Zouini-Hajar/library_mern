@@ -93,7 +93,7 @@ const Auth = () => {
     if (submitted && !error) {
       navigate("/");
     }
-  }, [error, navigate]);
+  }, [error]);
 
   return (
     <div className="auth-container">

@@ -23,7 +23,7 @@ export const createUser = createAsyncThunk(
         password: data.password,
       });
       setTokens(loginResponse.data);
-      return registerResponse.data.client;
+      return { ...registerResponse.data.client, role: 'client' };
     } catch (error) {
       return rejectWithValue(error.response.data.message);
     }
@@ -42,7 +42,7 @@ export const loginUser = createAsyncThunk(
         const response = await axios.get(
           `${CLIENT_API_URL}/getByEmail/${data.email}`
         );
-        return response.data;
+        return { ...response.data, role: 'client' };
       }
 
       return responseLogin.data.user;
@@ -69,7 +69,7 @@ export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
       const response = await axios.get(
         `${CLIENT_API_URL}/getByEmail/${user.email}`
       );
-      return response.data;
+      return { ...response.data, role: 'client' };
     }
 
     return user;
