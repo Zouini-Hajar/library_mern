@@ -1,0 +1,56 @@
+.testimonials {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rating {
+    display: inline-block;
+  }
+  
+  .rating div {
+    float: left;
+    color: #ccc;
+    
+  }
+  
+  .rating div:before {
+    content: '\2605';
+    font-size: 25px;
+  }
+  
+ #star {
+    color: #86469C;
+  }
+  
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 250px;
+    font-size: 10px;
+    padding: 1.7rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5.5px 1px #dddddd;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .testimonial:hover {
+    box-shadow: 2px 2px 11px 2px #dddddd;
+  }
+
+  .commenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .description, .profile > p{
+    color: gray;
+  }
+
+
+  
+  
+  
+  
