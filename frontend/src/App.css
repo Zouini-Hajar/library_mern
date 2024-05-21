@@ -1,3 +1,7 @@
 .container {
     padding: 1rem 2.5rem;
 }
+
+.slick-dots li button:before {
+    content: '' !important;
+}

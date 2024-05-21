@@ -70,4 +70,4 @@ const borrowingsSlice = createSlice({
 });
 
 export const {} = borrowingsSlice.actions;
-export default booksSlice.reducer;
+export default borrowingsSlice.reducer;
