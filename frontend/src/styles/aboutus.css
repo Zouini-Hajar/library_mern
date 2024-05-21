@@ -1,14 +1,14 @@
 .aboutus-container {
     position: absolute;
     z-index: 2;
-    top: 160px;
-    left: 150px;
+    top: 155px;
+    left: 145px;
 }
 
 .aboutus {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.2rem;
     color: white;
     width: 500px;
 }

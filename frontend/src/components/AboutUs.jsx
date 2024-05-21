@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/aboutus.css'
+import { Link } from 'react-router-dom'
 
 export default function AboutUs() {
   return (
@@ -10,9 +11,11 @@ export default function AboutUs() {
                 </div>
                 <div className="aboutus">
                     <h1>Find ver 20 million book in BookSphere</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem itaque tempore et, laboriosam iusto quis sed harum quasi laborum sit.</p>
+                    <p>Welcome to BookSphere, where your next great read is just a swipe away! Tired of paying full price for books you'll only read once? So are we! Dive into our vast ocean of stories, from spine-tingling mysteries to heart-melting romances. With BookSphere, renting books is as easy as pie—and way more fun. Join us and get ready to turn pages, not wallets!</p>
+                    
+                    <Link to="/books" style={{textDecoration:'none'}}>
                     <button class="cssbuttons-io-button">
-                        Discover Books
+                    Discover Books
                         <div class="icon">
                             <svg
                                 height="24"
@@ -27,7 +30,10 @@ export default function AboutUs() {
                                 ></path>
                             </svg>
                         </div>
-                    </button>
+                        </button>
+                    </Link>
+                        
+                    
 
                 </div>
             </div>

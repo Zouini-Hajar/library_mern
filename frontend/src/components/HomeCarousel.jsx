@@ -13,7 +13,7 @@ const contentStyle = {
 
 const imageStyle = {
   width: '100%',
-  height: '500px',
+  height: '550px',
   objectFit: 'cover',
 };
 
@@ -35,7 +35,7 @@ const imgContainerStyle = {
 };
 
 const HomeCarousel = () => (
-  <Carousel autoplay style={{ margin: '0 -50px',}}>
+  <Carousel  style={{ margin: '0 -50px',}}>
     <div style={contentStyle}>
       <div style={imgContainerStyle}>
         <img src={pic1} alt="Shelves pic" style={imageStyle} />

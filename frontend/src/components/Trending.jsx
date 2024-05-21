@@ -21,8 +21,8 @@ export default function Trending() {
     return (
         <div className="trending-books" style={{ marginTop: "5rem"}}>
             <div style={{marginBottom: "5rem" , display: 'flex' , flexDirection:'column' , alignItems: 'center'}}>
-                <h2>Books</h2>
-                <small style={{width:'50%' , textAlign:'center'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus corporis et itaque non quo recusandae, neque velit quam! </small>
+                <h2>Trending Titles</h2>
+                <small style={{width:'50%' , textAlign:'center'}}>Stay ahead of the literary curve with our curated selection of the hottest reads that everyone's talking about! </small>
             </div>
             <div className="flex">
                 {trendingBooks.map((book) => (
