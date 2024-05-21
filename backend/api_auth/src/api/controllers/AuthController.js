@@ -7,7 +7,7 @@ configDotenv();
 
 const generateAccessToken = (userInfo) => {
   return jwt.sign(userInfo, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "1800s", // 30 mins
+    expiresIn: "3600s", // 30 mins
   });
 };
 

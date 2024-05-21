@@ -31,19 +31,20 @@ const items = [
 const ProfileClient = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
+  const borrowings = useSelector(selectBorrowings);
   const [selectedItem, setSelectedItem] = useState("1");
-  const borrowedBooks = useSelector(selectBorrowings);
+  const [view, setView] = useState("list");
 
   useEffect(() => {
     dispatch(getClientBorrowings(user._id));
-  }, [borrowedBooks]);
+  }, [borrowings]);
 
   return (
     <div className="profile-container">
       <Menu
         onClick={(e) => setSelectedItem(e.key)}
         style={{
-          width: 256,
+          width: 270,
           height: "100%",
         }}
         defaultSelectedKeys={selectedItem}
@@ -53,18 +54,35 @@ const ProfileClient = () => {
       <div className="profile-content">
         {selectedItem == "1" ? (
           <>
-            <div className="flex">
+            <div className="flex" style={{ marginBottom: "2rem" }}>
               <h2>Borrowed Books</h2>
               <div>
                 <Button
                   icon={<AppstoreOutlined />}
                   style={{ marginRight: "0.5rem" }}
+                  onClick={(e) => setView("grid")}
+                  type={view == "list" ? "" : "primary"}
                 />
-                <Button type="primary" icon={<UnorderedListOutlined />} />
+                <Button
+                  icon={<UnorderedListOutlined />}
+                  onClick={(e) => setView("list")}
+                  type={view == "grid" ? "" : "primary"}
+                />
               </div>
             </div>
-            <div className="flex">
-              { borrowedBooks.map((book, i) => <Book key={i} book={book} />) }
+            <div className={view == "list" ? "flex-column" : "flex"}>
+              {borrowings.map((borrowing, i) => (
+                <Book
+                  key={i}
+                  book={borrowing.book}
+                  view={view}
+                  borrowing={{
+                    id: borrowing.borrow_id,
+                    startDate: borrowing.borrowingdate,
+                    endDate: borrowing.returndate,
+                  }}
+                />
+              ))}
             </div>
           </>
         ) : (

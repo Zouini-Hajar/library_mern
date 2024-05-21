@@ -1,40 +1,99 @@
 .book-container {
-    flex-basis: 28%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  flex-basis: 28%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .book-container > img {
-    width: 100%;
-    height: 370px;
-    object-fit: cover;
-    border-radius: 20px;
-    margin-bottom: 0.5rem;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
 }
 
 .rating {
-    font-weight: 600;
-    font-size: 0.7rem;
+  font-weight: 600;
+  font-size: 0.7rem;
 }
 
 .genre {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #86469C;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #86469c;
 }
 
 .title {
-    margin-top: -5px;
-    font-weight: bold;
+  margin-top: -5px;
+  font-weight: bold;
 }
 
 .author {
-    margin-top: -5px;
-    color: gray;
+  margin-top: -5px;
+  color: gray;
 }
 
 .price {
-    font-weight: 600;
-    font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.book-list-item {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.img-container {
+  flex-basis: 200px;
+}
+
+.img-container img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.genre-tag {
+  background-color: rgb(134, 70, 156, 0.4);
+  color: #86469c;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  margin-right: 0.5rem;
+}
+
+.book-list-item .title {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.dot {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin: 0 0.3rem;
+}
+
+.book-list-item .rating {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.book-description {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.actions {
+}
+
+.return-btn {
+    margin-top: 2rem;
 }
