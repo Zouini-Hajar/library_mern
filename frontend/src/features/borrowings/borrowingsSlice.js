@@ -7,7 +7,7 @@ export const getClientBorrowings = createAsyncThunk(
   async (clientId) => {
     try {
       const response = await axios.get(`${BORROWING_API_URL}/${clientId}`);
-      return response.data;
+      return response.data.map(borrowing => ({ borrow_id, bo}));
     } catch (error) {
       console.log(error);
     }
@@ -70,4 +70,5 @@ const borrowingsSlice = createSlice({
 });
 
 export const {} = borrowingsSlice.actions;
-export default booksSlice.reducer;
+export const selectBorrowings = state => state.borrowings.data;
+export default borrowingsSlice.reducer;
