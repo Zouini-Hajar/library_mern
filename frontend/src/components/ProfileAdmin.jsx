@@ -1,6 +1,7 @@
 import { Menu } from "antd";
 import React, { useState } from "react";
 import "../styles/profile.css";
+import BooksTable from "./BooksTable";
 
 const items = [
   {
@@ -23,7 +24,7 @@ const ProfileAdmin = () => {
       <Menu
         onClick={(e) => setSelectedItem(e.key)}
         style={{
-          width: 256,
+          width: 270,
           height: "100%",
         }}
         defaultSelectedKeys={selectedItem}
@@ -31,8 +32,7 @@ const ProfileAdmin = () => {
         items={items}
       />
       <div className="profile-content">
-        {selectedItem == "1" ? <>
-        </> : <></>}
+        {selectedItem == "1" ? <BooksTable /> : <></>}
       </div>
     </div>
   );
