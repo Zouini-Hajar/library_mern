@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Input, InputNumber, Popconfirm, Table, Typography } from "antd";
-import { useSelector } from "react-redux";
-import { selectAllBooks } from "../features/books/booksSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getBooks, selectAllBooks } from "../features/books/booksSlice";
 
 const EditableCell = ({
   editing,
@@ -39,6 +39,7 @@ const EditableCell = ({
 };
 
 const BooksTable = () => {
+  const dispatch = useDispatch();
   const [form] = Form.useForm();
   const books = useSelector(selectAllBooks);
   const [editingKey, setEditingKey] = useState("");
@@ -198,13 +199,24 @@ const BooksTable = () => {
       ...col,
       onCell: (record) => ({
         record,
-        inputType: (col.dataIndex === "numberOfPages" || col.dataIndex === "averageRating" || col.dataIndex === "price" || col.dataIndex === "stock") ? "number" : "text",
+        inputType:
+          col.dataIndex === "numberOfPages" ||
+          col.dataIndex === "averageRating" ||
+          col.dataIndex === "price" ||
+          col.dataIndex === "stock"
+            ? "number"
+            : "text",
         dataIndex: col.dataIndex,
         title: col.title,
         editing: isEditing(record),
       }),
     };
   });
+
+  useEffect(() => {
+    dispatch(getBooks);
+  }, []);
+
   return (
     <>
       <div className="flex" style={{ marginBottom: "2rem" }}>
@@ -224,6 +236,8 @@ const BooksTable = () => {
           pagination={{
             onChange: cancel,
           }}
+          scroll={{x: true}}
+          style={{flex: '70%'}}
         />
       </Form>
     </>

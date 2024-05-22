@@ -1,10 +1,14 @@
 .profile-container {
-    height: 100vh;
-    display: flex;
-    padding: 1rem 0;
+  height: 100vh;
+  display: flex;
+  padding: 1rem 0;
 }
 
 .profile-content {
-    padding: 0 2rem;
-    width: 100%;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.books-table {
+  flex-grow: 0;
 }

@@ -24,7 +24,7 @@ const ProfileAdmin = () => {
       <Menu
         onClick={(e) => setSelectedItem(e.key)}
         style={{
-          width: 256,
+          width: 270,
           height: "100%",
         }}
         defaultSelectedKeys={selectedItem}
