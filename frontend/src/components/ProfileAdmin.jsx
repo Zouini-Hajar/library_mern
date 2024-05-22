@@ -31,7 +31,8 @@ const ProfileAdmin = () => {
         items={items}
       />
       <div className="profile-content">
-        {selectedItem == "1" ? "hello" : "hey"}
+        {selectedItem == "1" ? <>
+        </> : <></>}
       </div>
     </div>
   );

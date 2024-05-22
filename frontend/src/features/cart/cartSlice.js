@@ -21,7 +21,7 @@ const saveState = (state) => {
   }
 };
 
-const cartsSlice = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState: {
     data: loadState(),
@@ -38,5 +38,5 @@ const cartsSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart} = cartsSlice.actions;
-export default cartsSlice.reducer;
+export const { addToCart, removeFromCart } = cartSlice.actions;
+export default cartSlice.reducer;
