@@ -10,7 +10,7 @@ routes.get('/', validateAccessToken, getAllClients);
 routes.get('/getByEmail/:email', getClientByEmail);
 routes.get('/:id', getClientById); // validateAccessToken should be used
 routes.post('/', validation(addClientSchema), addClient);
-routes.put('/', validateAccessToken, validation(updateClientSchema), updateClient);
+routes.put('/', validation(updateClientSchema), updateClient);
 routes.delete('/:id', validateAccessToken, deleteClient);
 
 export default routes;

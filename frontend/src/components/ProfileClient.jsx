@@ -14,6 +14,7 @@ import {
 } from "../features/borrowings/borrowingsSlice";
 import { selectUser } from "../features/user/userSlice";
 import Book from "./Book";
+import UpdateClient from "./UpdateClient";
 
 const items = [
   {
@@ -86,7 +87,7 @@ const ProfileClient = () => {
             </div>
           </>
         ) : (
-          "hey"
+          <UpdateClient/>
         )}
       </div>
     </div>

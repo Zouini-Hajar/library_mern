@@ -1,0 +1,53 @@
+.updateC-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: -1rem -2.5rem;
+}
+
+.updateC-container .content {
+  width: 70%;
+  padding: 3rem;
+}
+
+.updateC-container form {
+	flex: 0.8;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+form > div, .flex-row > div {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+  width: 100%;
+}
+
+
+button {
+	margin-top: 0.6rem;
+}
+
+img {
+	flex: 1;
+}
+
+.updateC-container .flex-row {
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+.error-msg {
+  color: rgb(184, 6, 6);
+  font-size: 0.8rem;
+  margin-bottom: -0.4rem;
+}
+
+.error-alert {
+  position: fixed;
+  z-index: 20;
+  top: 5%;
+  right: 3%;
+}
