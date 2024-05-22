@@ -16,11 +16,10 @@ export const getClientBorrowings = createAsyncThunk(
 
 export const addBorrowing = createAsyncThunk(
   "borrowings/addBorrowing",
-  async (clientId, bookId) => {
+  async (data) => {
     try {
       const response = await axios.post(`${BORROWING_API_URL}/borrow`, {
-        clientId,
-        bookId,
+        ...data
       });
       return response.data;
     } catch (error) {
@@ -65,7 +64,19 @@ const borrowingsSlice = createSlice({
         state.loading = false;
         state.data = null;
         state.error = action.payload;
-      });
+      })
+      .addCase(addBorrowing.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(addBorrowing.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data = [...state.data, action.payload];
+        state.error = null;
+      })
+      .addCase(addBorrowing.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
   },
 });
 

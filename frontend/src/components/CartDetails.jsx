@@ -9,7 +9,7 @@ import '../styles/cart.css';
 
 
 
-const CartDetails = ({books}) => {
+const CartDetails = ({books,handleCancel}) => {
     const columns = [
         {
             title: "Item",
@@ -31,7 +31,7 @@ const CartDetails = ({books}) => {
             render: (_, record) => (
                 <Space size="middle">
                     <a>
-                        <DeleteFilled style={{ color: "#86469C" , fontSize:'20px'}} />
+                        <DeleteFilled onClick={(e) => {handleCancel(record._id)}} style={{ color: "#86469C" , fontSize:'20px'}} />
                     </a>
                 </Space>
             ),

@@ -1,10 +1,12 @@
 import React from 'react'
 import '../styles/checkout.css'
 
-export default function CheckOut({prices}) {
+export default function CheckOut({prices,handleSubmit}) {
     const subtotal = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toFixed(2);
     const tax = (subtotal * 0.08).toFixed(2);
     const total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
+    
+
     return (
         <div style={{backgroundColor: '#F0E3F4', borderRadius:'10px', marginTop:'2rem'}}>
             <div className='checkout-container'>
@@ -34,7 +36,7 @@ export default function CheckOut({prices}) {
                             <td>{ total }$</td>
                         </tr>
                     </table>
-                    <button disabled={total !== 0.00}>
+                    <button onClick={handleSubmit}  disabled={total === '0.00'}>
                         Checkout
                     </button>
                 </div>
