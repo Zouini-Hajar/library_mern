@@ -9,16 +9,18 @@ import {
 } from "@ant-design/icons";
 import { Avatar, Button, Dropdown, Input, Space, Tooltip } from "antd";
 import Logo from "./Logo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut, selectUser } from "../features/user/userSlice";
 
 const Header = () => {
+  const naviagate = useNavigate();
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
     dispatch(logOut());
+    naviagate('/');
   };
 
   const menuItems = [
