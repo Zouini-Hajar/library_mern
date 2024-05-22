@@ -88,7 +88,7 @@ const Header = () => {
           <Dropdown menu={{ items: userItems }}>
             <Space align="center" className="user">
               <Avatar size="small" icon={<UserOutlined />} />{" "}
-              {user.firstName ? user.firstName + " " + user.lastName : "Admin"}
+              {user.role == 'client' ? user.firstName + " " + user.lastName : "Admin"}
             </Space>
           </Dropdown>
         </div>

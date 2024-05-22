@@ -12,6 +12,7 @@ const Books = () => {
   const genres = [...new Set(books.flatMap((book) => book.genres))];
   const [genre, setGenre] = useState("");
   //const [minMaxPrices, setMinMaxPrices] = useState([]);
+  const [view, setView] = useState("grid");
 
   useEffect(() => {
     dispatch(getBooks());
@@ -57,16 +58,22 @@ const Books = () => {
             <Button
               icon={<AppstoreOutlined />}
               style={{ marginRight: "0.5rem" }}
+              onClick={(e) => setView("grid")}
+              type={view == "list" ? "" : "primary"}
             />
-            <Button type="primary" icon={<UnorderedListOutlined />} />
+            <Button
+              icon={<UnorderedListOutlined />}
+              onClick={(e) => setView("list")}
+              type={view == "grid" ? "" : "primary"}
+            />
           </div>
         </div>
         <div className="flex">
           {!genre || genre == "all"
-            ? books.map((book, i) => <Book key={i} book={book} />)
+            ? books.map((book, i) => <Book key={i} book={book} view={view} />)
             : books
                 .filter((book) => book.genres.indexOf(genre) != -1)
-                .map((book, i) => <Book key={i} book={book} />)}
+                .map((book, i) => <Book key={i} book={book} view={view} />)}
         </div>
       </div>
     </div>
