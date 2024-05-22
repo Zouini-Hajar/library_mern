@@ -1,7 +1,10 @@
 import React from 'react'
 import '../styles/checkout.css'
 
-export default function CheckOut() {
+export default function CheckOut({prices}) {
+    const subtotal = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toFixed(2);
+    const tax = (subtotal * 0.08).toFixed(2);
+    const total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
     return (
         <div style={{backgroundColor: '#F0E3F4', borderRadius:'10px', marginTop:'2rem'}}>
             <div className='checkout-container'>
@@ -20,18 +23,18 @@ export default function CheckOut() {
                     <table className='checkout-table'>
                         <tr>
                             <th>Subtotal:</th>
-                            <td>12.99$</td>
+                            <td>{ subtotal }$</td>
                         </tr>
                         <tr>
                             <th>Tax:</th>
-                            <td>2.99$</td>
+                            <td>{ tax }$</td>
                         </tr>
                         <tr className='total-row'>
                             <th>Total:</th>
-                            <td>{12.99 + 2.99}$</td>
+                            <td>{ total }$</td>
                         </tr>
                     </table>
-                    <button>
+                    <button disabled={total !== 0.00}>
                         Checkout
                     </button>
                 </div>

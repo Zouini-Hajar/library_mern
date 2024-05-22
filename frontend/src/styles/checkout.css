@@ -94,6 +94,12 @@
     color: white;
     font-size: 18px;
     margin-top: 4.2rem;
+    cursor: pointer;
+}
+
+.checkout button:disabled {
+    background-color: #755A7D;
+    cursor: not-allowed;
 }
 
   
