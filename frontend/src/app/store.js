@@ -11,6 +11,6 @@ export default configureStore({
         user: userReducer,
         borrowings: borrowingsReducer,
         cart: cartReducer,
-        client: clientsReducer,
+        clients: clientsReducer,
     }
 });
