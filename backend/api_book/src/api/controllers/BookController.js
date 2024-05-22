@@ -37,6 +37,7 @@ export const getBook = async (req, res) => {
 
 export const addBook = async (req, res) => {
   try {
+    console.log(req.body)
     const book = await Book.create(req.body);
 
     // Send notification to clients that a new book was added
@@ -58,9 +59,10 @@ export const addBook = async (req, res) => {
 
 export const updateBook = async (req, res) => {
   try {
-    const book = await Book.findOneAndUpdate({ _id: req.body.id }, { $set: req.body });
+    console.log(req.body)
+    const book = await Book.findOneAndUpdate({ _id: req.body._id }, { $set: req.body });
     if (!book) 
-      res.status(404).json({ message: `No book found matching id ${req.params.id}` });
+      res.status(404).json({ message: `No book found matching id ${req.body._id}` });
     else {
       // Send notification to admin to restock
       if (req.body.stock == 0) {

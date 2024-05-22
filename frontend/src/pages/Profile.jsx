@@ -15,9 +15,8 @@ const Profile = () => {
       {!user ? (
         <Result
           status="info"
-          icon={<UnlockOutlined />}
           title="401"
-          subTitle="PLease log in to access this route"
+          subTitle="Your Session has expired. PLease log in to access this route"
           extra={
             <Button type="primary" href="/">
               Back Home

@@ -30,6 +30,12 @@ function App() {
         token: {
           colorPrimary: "#86469C",
         },
+        components: {
+          Table: {
+            headerBg: "#5B067D",
+            headerColor: "white",
+          },
+        },
       }}
     >
       {location.pathname != "/auth/signup" &&

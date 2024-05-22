@@ -8,8 +8,8 @@ const routes = Router();
 
 routes.get('/', getAllBooks);
 routes.get('/:id', getBook);
-routes.post('/', validateAccessToken, validation(addBookSchema), addBook);
-routes.put('/', validateAccessToken, validation(updateBookSchema), updateBook);
-routes.delete('/:id', validateAccessToken, deleteBook);
+routes.post('/', validation(addBookSchema), addBook);
+routes.put('/', validation(updateBookSchema), updateBook);
+routes.delete('/:id', deleteBook);
 
 export default routes;

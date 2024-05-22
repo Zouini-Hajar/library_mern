@@ -11,7 +11,7 @@ export const addBookSchema = yup.object().shape({
   genres: yup.array().of(yup.string()),
   language: yup.string(),
   numberOfPages: yup.number().positive().integer(),
-  coverImageUrl: yup.string().url(),
+  coverImageUrl: yup.string(),
   averageRating: yup.number().min(0).max(5),
   reviews: yup.array().of(
     yup.object().shape({
