@@ -1,0 +1,113 @@
+version: '3.8'
+services:
+  gateway:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./gateway/default.conf:/etc/nginx/conf.d/default.conf
+
+  rabbit:
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  dbUsers:
+    image: mongo
+    ports:
+      - 30000:27017
+    volumes:
+      - users:/data/db
+
+  dbBooks:
+    image: mongo
+    ports:
+      - 30001:27017
+    volumes:
+      - books:/data/db
+
+  dbBorrows:
+    image: mongo
+    ports:
+      - 30002:27017
+    volumes:
+      - borrowings:/data/db
+
+  dbClients:
+    image: mongo
+    ports:
+      - 30003:27017
+    volumes:
+      - clients:/data/db
+
+  auth-service:
+    build: ./backend/api_auth
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://dbUsers:27017/dbUsers
+    depends_on:
+      - dbUsers
+      - gateway
+
+  book-service:
+    build: ./backend/api_book
+    ports:
+      - 3001:3000
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://dbBooks:27017/dbBooks
+      - AUTH_SERVICE_URL=http://auth-service:3000/auth
+      - MAILING_QUEUE=notification_service_queue
+      - URL_RABBIT=amqp://guest:guest@rabbit:5672
+    depends_on:
+      - dbBooks
+      - rabbit
+      - notification-service
+      - gateway
+
+  borrowing-service:
+    build: ./backend/api_borrowing
+    ports:
+      - 3002:3000
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://dbBorrows:27017/dbBorrows
+      - BOOK_SERVICE_URL=http://book-service:3000/books
+      - CLIENT_SERVICE_URL=http://client-service:3000/clients
+    depends_on:
+      - dbBorrows
+      - book-service
+      - client-service
+      - gateway
+
+  client-service:
+    build: ./backend/api_client
+    ports:
+      - 3003:3000
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://dbClients:27017/dbClients
+      - AUTH_SERVICE_URL=http://auth-service:3000/auth
+    depends_on:
+      - dbClients
+      - auth-service
+      - gateway
+
+  notification-service:
+    build: ./backend/api_notification
+    ports:
+      - 3004:3000
+    environment:
+      - PORT=3000
+      - MAILING_QUEUE=notification_service_queue
+      - URL_RABBIT=amqp://guest:guest@rabbit:5672
+    depends_on:
+      - rabbit
+volumes:
+  users:
+  books:
+  borrowings:
+  clients:
