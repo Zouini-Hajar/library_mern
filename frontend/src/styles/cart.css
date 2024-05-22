@@ -35,3 +35,7 @@
 #root > div > div > div > div > div > div > div > table > thead > tr > th:nth-child(1){
     border-bottom-left-radius: 8px;
 }
+
+#root > div > div > div.ant-table-wrapper.css-dev-only-do-not-override-1t8vkpl > div > div > ul{
+    display: none;
+}

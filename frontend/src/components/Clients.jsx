@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { SearchOutlined, DeleteFilled } from '@ant-design/icons';
-import { Button, Input, Space, Table, Modal } from 'antd'; // Import Modal from antd
+import { Button, Input, Space, Table } from 'antd'; 
 import Highlighter from 'react-highlight-words';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllClients, selectAllClients, deleteClient } from '../features/clients/clientsSlice'; // Import deleteClient action
+import { getAllClients, selectAllClients, deleteClient } from '../features/clients/clientsSlice'; 
 
 const Client = () => {
 

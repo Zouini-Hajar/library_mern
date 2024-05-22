@@ -11,3 +11,7 @@
 .update-form {
   display: flex;
 }
+
+#root > div > div > div.profile-content > div > div.ant-table-wrapper.css-dev-only-do-not-override-1t8vkpl > div > div > ul{
+  display: none;
+}
