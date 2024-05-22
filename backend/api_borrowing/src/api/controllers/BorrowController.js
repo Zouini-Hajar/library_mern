@@ -55,6 +55,7 @@ export const getClientBorrows = (req, res) => {
 
 export const addBorrow = (req, res) => {
   const { clientId, bookId } = req.body;
+  console.log(req.body)
   
   if (!clientId || !bookId) {
     return res

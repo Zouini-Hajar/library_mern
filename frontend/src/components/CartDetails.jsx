@@ -7,17 +7,9 @@ import CartItem from "../components/CartItem";
 import '../styles/cart.css';
 
 
-const idBooks = ['6648c47052e96e6a0433ced6', '6648c47052e96e6a0433ced7', '6648c47052e96e6a0433ced8']
 
-const CartDetails = () => {
-    const dispatch = useDispatch();
-    const books = useSelector(selectAllBooks);
-    const cartBooks = books.filter((b) => idBooks.includes(b._id))
 
-    useEffect(() => {
-        dispatch(getBooks());
-    }, []);
-
+const CartDetails = ({books,handleCancel}) => {
     const columns = [
         {
             title: "Item",
@@ -39,7 +31,7 @@ const CartDetails = () => {
             render: (_, record) => (
                 <Space size="middle">
                     <a>
-                        <DeleteFilled style={{ color: "#86469C" , fontSize:'20px'}} />
+                        <DeleteFilled onClick={(e) => {handleCancel(record._id)}} style={{ color: "#86469C" , fontSize:'20px'}} />
                     </a>
                 </Space>
             ),
@@ -56,7 +48,7 @@ const CartDetails = () => {
                     },
                 },
             }}
-        ><Table columns={columns} dataSource={cartBooks} rowKey="_id" style={{ margin: "auto", width: "90%" , marginTop:'3rem'}} />
+        ><Table columns={columns} dataSource={books} rowKey="_id" style={{ margin: "auto", width: "90%" , marginTop:'3rem'}} />
         </ConfigProvider>
 
     )
