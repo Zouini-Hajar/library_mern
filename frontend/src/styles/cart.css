@@ -27,3 +27,11 @@
 #root > div > div > div > div > div > div > div > table > tbody > tr > td:nth-child(3) > div{
     margin-left: 50% !important;
 }
+
+#root > div > div > div > div > div > div > div > table > thead > tr > th:nth-child(3){
+    border-bottom-right-radius: 8px;
+}
+
+#root > div > div > div > div > div > div > div > table > thead > tr > th:nth-child(1){
+    border-bottom-left-radius: 8px;
+}
