@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getBooks, selectAllBooks } from "../features/books/booksSlice";
+import React from "react";
 import { DeleteFilled } from "@ant-design/icons";
 import { ConfigProvider, Space, Table } from "antd";
 import CartItem from "../components/CartItem";

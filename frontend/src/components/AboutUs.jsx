@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/aboutus.css'
 import { Link } from 'react-router-dom'
+import { getBooks, selectAllBooks } from '../features/books/booksSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function AboutUs() {
+    const dispatch = useDispatch();
+    const books = useSelector(selectAllBooks);
+
+    useEffect(() => {
+        dispatch(getBooks());
+    }, []);
+
   return (
     <div className="aboutus-container">
                 <div className="promo">
@@ -10,7 +19,7 @@ export default function AboutUs() {
                     <span>Discount 60% Special World Book Day</span>
                 </div>
                 <div className="aboutus">
-                    <h1>Find ver 20 million book in BookSphere</h1>
+                    <h1>Find over {books.length} book in BookSphere</h1>
                     <p>Welcome to BookSphere, where your next great read is just a swipe away! Tired of paying full price for books you'll only read once? So are we! Dive into our vast ocean of stories, from spine-tingling mysteries to heart-melting romances. With BookSphere, renting books is as easy as pie—and way more fun. Join us and get ready to turn pages, not wallets!</p>
                     
                     <Link to="/books" style={{textDecoration:'none'}}>
