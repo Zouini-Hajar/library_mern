@@ -35,7 +35,7 @@ const imgContainerStyle = {
 };
 
 const HomeCarousel = () => (
-  <Carousel  style={{ margin: '0 -50px',}}>
+  <Carousel autoplay  style={{ margin: '0 -50px',}}>
     <div style={contentStyle}>
       <div style={imgContainerStyle}>
         <img src={pic1} alt="Shelves pic" style={imageStyle} />
